@@ -1,0 +1,9 @@
+// These is  simple structure of our C++ program where we are going to start our journey
+
+#include<iostream>               // # -> preprocessor directive   and iostream --> is a library of C++
+using namespace std;       // we using a namespace to avoid the std:: --> scope resolution
+int main(){             // This is main class where our program actually starts executing
+cout<<"Hello world"<<endl;          // As we know these is simple program by printing the Hello World
+int num=10;                               // Taking the input by making a int variable and assigning the 10
+cout<<num<<endl;                 // printing the result the num
+}
