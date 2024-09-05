@@ -2,6 +2,16 @@
 #include<iostream>
 #include<string>
 using namespace std;
+bool checkPalindrome(string str,int s,int e){
+    if(str[s] != str[e]){
+        return false;
+    }
+    else{
+        s++;
+        e--;
+    }
+    return true;
+}
 bool validPali(string s){
     int i=0;
     int j=s.length()-1;
@@ -9,15 +19,17 @@ bool validPali(string s){
         if(s[i] == s[j]){
             i++;
             j--;
-            return true;
+            
         }
-        else if(s[i] != s[j]){
-            s.erase(s.begin()+i);
-            i++;
-            return false;
+        else{
+            bool ansOne = checkPalindrome(s,i+1,j);
+            bool ansTwo = checkPalindrome(s,i,j-1);
+            bool finalAns = ansOne || ansTwo;
+            return finalAns;
         }
         
-    }return false;
+        
+    }return true;
 }
 int main(){
     string s="deee";
